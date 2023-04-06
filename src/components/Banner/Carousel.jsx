@@ -64,6 +64,7 @@ const Carousel = () => {
     },
   };
 
+  // calling trending coin list
   useEffect(() => {
     trendingCoin();
   }, [currency]);
