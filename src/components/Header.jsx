@@ -71,7 +71,7 @@ const Header = () => {
           <i
             className={`fa-regular fa-${
               isThemeChanged ? "sun" : "moon"
-            } dark:text-yellow-500 `}
+            } dark:text-yellow-500 cursor-pointer`}
             onClick={handleThemeSwitch}
           ></i>
         </div>

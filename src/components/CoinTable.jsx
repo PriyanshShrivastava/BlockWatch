@@ -73,7 +73,7 @@ const CoinTable = () => {
           }}
         />
       </div>
-      <div className=" w-10/12 md:w-2/3 mx-auto">
+      <div className=" w-10/12 md:w-2/3 mx-auto scroll-smooth">
         <TableContainer className="rounded-md shadow-sm border-none">
           {loading ? (
             <LinearProgress className="dark:bg-yellow-500 bg-slate-600" />
@@ -116,9 +116,10 @@ const CoinTable = () => {
                             style={{
                               display: "flex",
                               alignItems: "center",
-                              gap: "20px",
+                              gap: "16px",
                               fontFamily: "Josefin sans",
                             }}
+                            align="left"
                             className=" dark:text-white text-zinc-700 text-md md:text-lg font-semibold font-lato"
                           >
                             <img
@@ -127,8 +128,10 @@ const CoinTable = () => {
                               className="h-10 md:h-16"
                             />
                             <div className="flex flex-col space-y-2">
-                              <span className="capitalize">{row.symbol}</span>
-                              <span>{row.name}</span>
+                              <span className="capitalize text-sm ">
+                                {row.symbol}
+                              </span>
+                              <span className="text-sm ">{row.name}</span>
                             </div>
                           </TableCell>
                           <TableCell
@@ -179,6 +182,13 @@ const CoinTable = () => {
             color: "white",
             backgroundColor: `${theme === "dark" ? "gold" : "transparent"}`,
             borderRadius: "10px",
+          }}
+          onChange={(_, value) => {
+            setPage(value);
+            window.scroll({
+              top: 400,
+              behavior: "smooth",
+            });
           }}
         />
       </div>

@@ -4,6 +4,7 @@ import { TrendingCoins } from "../../config/api";
 import { CryptoState } from "../../contexts/blockContext";
 import AliceCarousel from "react-alice-carousel";
 import { Link } from "react-router-dom";
+import { numberWithCommas } from "../../config/numberwithCommas";
 
 const Carousel = () => {
   const { currency, currencySymbol } = CryptoState();
@@ -19,10 +20,6 @@ const Carousel = () => {
     }
   };
 
-  const numberWithCommas = (x) => {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  };
-
   //   getting carousel items
 
   const items = trendingList?.map((token) => {
@@ -32,12 +29,15 @@ const Carousel = () => {
         <img src={token.image} alt={token.name} className="h-16 md:h-24" />
         <div className="flex space-x-2 mt-4">
           {" "}
-          <span className="text-sm font-josefin">{token?.symbol}</span>
+          <span className="text-sm font-josefin capitalize text-zinc-800 dark:text-white">
+            {token?.symbol}
+          </span>
           <span
             style={{
-              color: percentageChange
-                ? "rgb(14, 203, 129)"
-                : "rgb(242, 75, 103)",
+              color:
+                percentageChange > 0
+                  ? "rgb(14, 203, 129)"
+                  : "rgb(242, 75, 103)",
             }}
           >
             {percentageChange && "+"}{" "}
