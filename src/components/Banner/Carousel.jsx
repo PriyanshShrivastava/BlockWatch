@@ -28,7 +28,7 @@ const Carousel = () => {
   const items = trendingList?.map((token) => {
     let percentageChange = token.price_change_precentage_24h >= 0;
     return (
-      <Link to={`coins/${token.id}`} className="flex flex-col items-start">
+      <Link to={`coins/${token.id}`} className="flex flex-col items-center ">
         <img src={token.image} alt={token.name} className="h-16 md:h-24" />
         <div className="flex space-x-2 mt-4">
           {" "}
@@ -56,7 +56,7 @@ const Carousel = () => {
     0: {
       items: 2,
     },
-    360: {
+    500: {
       items: 4,
     },
     1024: {
@@ -64,11 +64,11 @@ const Carousel = () => {
     },
   };
 
-  //   useEffect(() => {
-  //     trendingCoin();
-  //   }, [currency]);
+  useEffect(() => {
+    trendingCoin();
+  }, [currency]);
   return (
-    <div className="flex items-center px-10 sm:px-6 md:px-16">
+    <div className="flex items-center text-center pl-10 sm:px-6 md:pl-16">
       <AliceCarousel
         mouseTracking
         infinite
