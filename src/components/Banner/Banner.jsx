@@ -8,9 +8,6 @@ const Banner = () => {
       style={{
         backgroundImage:
           "url('https://www.transparenttextures.com/patterns/cubes.png')",
-        // backgroundSize: "cover",
-        // backgroundRepeat: "no-repeat",
-        // backgroundPosition: "center center",
       }}
     >
       <div>

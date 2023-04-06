@@ -5,13 +5,16 @@ import App from "./App";
 import "react-alice-carousel/lib/alice-carousel.css";
 import "./index.css";
 import BlockContext from "./contexts/blockContext";
+import ThemeContext from "./contexts/themeContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-    <BlockContext>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </BlockContext>
+    <ThemeContext>
+      <BlockContext>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </BlockContext>
+    </ThemeContext>
   </BrowserRouter>
 );

@@ -2,12 +2,14 @@ import React, { useEffect, useState } from "react";
 import { MenuItem, Select } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { CryptoState } from "../contexts/blockContext";
+import { ThemeState } from "../contexts/themeContext";
 
 const Header = () => {
   const navigate = useNavigate();
   const { currency, setCurrency } = CryptoState();
-  const [theme, setTheme] = useState("light");
+  // const [theme, setTheme] = useState("light");
   const [isThemeChanged, setIsThemeChanged] = useState(false);
+  const { theme, setTheme } = ThemeState();
 
   useEffect(() => {
     if (theme === "dark") {
@@ -69,7 +71,7 @@ const Header = () => {
           <i
             className={`fa-regular fa-${
               isThemeChanged ? "sun" : "moon"
-            } dark:text-yellow-500 `}
+            } dark:text-yellow-500 cursor-pointer`}
             onClick={handleThemeSwitch}
           ></i>
         </div>
