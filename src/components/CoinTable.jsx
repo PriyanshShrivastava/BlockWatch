@@ -77,7 +77,7 @@ const CoinTable = () => {
         <TableContainer className="rounded-md shadow-sm border-none">
           {loading ? (
             <LinearProgress className="dark:bg-yellow-500 bg-slate-600" />
-          ) : (
+          ) : handleSearch().length >= 1 ? (
             <>
               <Table className="rounded-md ">
                 <TableHead className="dark:bg-yellow-400 bg-zinc-100 ">
@@ -171,27 +171,34 @@ const CoinTable = () => {
                 </TableBody>
               </Table>
             </>
+          ) : (
+            <h1 className="w-full text-center text-lg md:text-4xl font-lato dark:text-white text-zinc-600">
+              {" "}
+              Apologies, {searchField} isn't listed yet.
+            </h1>
           )}
         </TableContainer>
 
-        <Pagination
-          count={Number(handleSearch()?.length / 10).toFixed(0)}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            marginTop: "10px",
-            color: "white",
-            backgroundColor: `${theme === "dark" ? "gold" : "transparent"}`,
-            borderRadius: "10px",
-          }}
-          onChange={(_, value) => {
-            setPage(value);
-            window.scroll({
-              top: 400,
-              behavior: "smooth",
-            });
-          }}
-        />
+        {handleSearch().length >= 1 ? (
+          <Pagination
+            count={Number(handleSearch()?.length / 10).toFixed(0)}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "10px",
+              color: "white",
+              backgroundColor: `${theme === "dark" ? "gold" : "transparent"}`,
+              borderRadius: "10px",
+            }}
+            onChange={(_, value) => {
+              setPage(value);
+              window.scroll({
+                top: 400,
+                behavior: "smooth",
+              });
+            }}
+          />
+        ) : null}
       </div>
     </div>
   );
