@@ -17,7 +17,6 @@ const CoinPage = () => {
   const fetchSingleCoin = async () => {
     try {
       const { data } = await axios.get(SingleCoin(id));
-
       setToken(data);
     } catch (error) {
       console.log(error);
