@@ -29,7 +29,7 @@ const Carousel = () => {
         <img src={token.image} alt={token.name} className="h-16 md:h-24" />
         <div className="flex space-x-2 mt-4">
           {" "}
-          <span className="text-sm font-josefin capitalize text-zinc-800 dark:text-white">
+          <span className="text-sm font-dmsans capitalize text-zinc-800 dark:text-white">
             {token?.symbol}
           </span>
           <span

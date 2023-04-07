@@ -18,7 +18,7 @@ const SideBar = ({ token }) => {
       <img
         src={token?.image.large}
         alt={token?.name}
-        className="w-1/2 h-1/2 sm:w-1/3 transition-all duration-100 md:w-[200px] md:h-[200px] mx-auto"
+        className="w-1/3 transition-all duration-100 md:w-[200px] md:h-[200px] mx-auto"
       />
 
       <h1 className=" text-zinc-800 dark:text-white text-3xl md:text-5xl font-bold font-lato text-center">

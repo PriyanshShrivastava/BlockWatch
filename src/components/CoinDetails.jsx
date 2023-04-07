@@ -43,7 +43,7 @@ const CoinDetails = ({ token }) => {
     fetchGraphData();
   }, [days, token]);
   return (
-    <div className="w-full md:w-2/3 flex flex-col justify-center items-center px-6">
+    <div className="w-full md:w-2/3 flex flex-col justify-center items-center md:px-6">
       {/* Charts  */}
       {!chartData ? (
         <CircularProgress

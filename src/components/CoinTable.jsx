@@ -64,7 +64,7 @@ const CoinTable = () => {
         <i className="fa-solid fa-magnifying-glass text-slate-500 dark:text-yellow-500 absolute top-4 left-4 md:left-6 md:top-6"></i>
         <input
           type="text"
-          className="w-full rounded-md shadow-md px-12 py-2 md:py-4 font-josefin text-xl border-2 dark:border-yellow-400 border-slate-500 focus:outline focus:outline-yellow-500 bg-transparent dark:text-yellow-500 text-slate-700 transition-all duration-100"
+          className="w-full rounded-md shadow-md px-12 py-2 md:py-4 font-dm text-xl border-2 dark:border-yellow-400 border-slate-500 focus:outline focus:outline-yellow-500 bg-transparent dark:text-yellow-500 text-slate-700 transition-all duration-100"
           value={searchField}
           placeholder="Search a coin"
           onChange={(event) => {
@@ -81,7 +81,7 @@ const CoinTable = () => {
             <>
               <Table className="rounded-md ">
                 <TableHead className="dark:bg-yellow-400 bg-zinc-100 ">
-                  <TableRow className="font-josefin ">
+                  <TableRow className="font-dm ">
                     {["Coin", "Price", "24h", "Mrkt Cap"].map((row) => (
                       <TableCell
                         key={row}
@@ -90,7 +90,7 @@ const CoinTable = () => {
                           fontSize: "16px",
                           color: "black",
                           fontWeight: "600",
-                          fontFamily: "Josefin Sans",
+                          fontFamily: "DM Sans",
                         }}
                       >
                         {row}
@@ -117,7 +117,8 @@ const CoinTable = () => {
                               display: "flex",
                               alignItems: "center",
                               gap: "16px",
-                              fontFamily: "Josefin sans",
+                              fontFamily: "DM Sans",
+                              fontWeight: "600",
                             }}
                             align="left"
                             className=" dark:text-white text-zinc-700 text-md md:text-lg font-semibold font-lato"
@@ -148,7 +149,7 @@ const CoinTable = () => {
                                 profit > 0
                                   ? "rgb(14, 203, 129)"
                                   : "rgb(242, 75, 103)",
-                              fontWeight: 500,
+                              fontWeight: 600,
                             }}
                           >
                             {profit && "+"}
