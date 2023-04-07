@@ -13,7 +13,6 @@ const Carousel = () => {
   const trendingCoin = async () => {
     try {
       const { data } = await axios.get(TrendingCoins(currency));
-      console.log(trendingList);
       setTrendingList(data);
     } catch (error) {
       console.error(error);
@@ -24,7 +23,7 @@ const Carousel = () => {
 
   const items = trendingList?.map((token) => {
     let percentageChange = token?.price_change_percentage_24h >= 0;
-  
+
     return (
       <Link to={`coins/${token.id}`} className="flex flex-col items-center ">
         <img src={token.image} alt={token.name} className="h-16 md:h-24" />

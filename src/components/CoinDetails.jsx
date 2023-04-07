@@ -38,7 +38,6 @@ const CoinDetails = ({ token }) => {
     }
   };
 
-  console.log(chartData);
   useEffect(() => {
     fetchGraphData();
   }, [days, token]);
