@@ -23,7 +23,6 @@ const CoinPage = () => {
       console.log(error);
     }
   };
-  console.log(token);
 
   useEffect(() => {
     fetchSingleCoin();
